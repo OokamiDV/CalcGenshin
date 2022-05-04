@@ -6,14 +6,14 @@ let wrapper = document.getElementById("wrapper")
 let gems = null
 let tray = null
 
-wrapper.style.backgroundImage = "url(/media/pai.png)"
+wrapper.style.backgroundImage = "url(./media/pai.png)"
 
 checkbox.onclick = function() {
     input.value = ""
     if (checkbox.checked) {
-        wrapper.style.backgroundImage = "url(/media/gem.png)"
+        wrapper.style.backgroundImage = "url(/.media/gem.png)"
     } else {
-        wrapper.style.backgroundImage = "url(/media/crut.png)"
+        wrapper.style.backgroundImage = "url(/.media/crut.png)"
     }
 }
 
@@ -24,7 +24,7 @@ function needGems(gems, tray) {
 }
 
 function needTray(tray, gems) {
-    wrapper.style.backgroundImage = "url(/media/crut.png)"
+    wrapper.style.backgroundImage = "url(./media/crut.png)"
     tray = gems / 160
     return tray
 }
