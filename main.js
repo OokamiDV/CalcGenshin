@@ -48,12 +48,12 @@ input.oninput = function() {
     if (checkbox.checked) {
         tray = input.value
         gems = needGems(gems, tray)
-        document.getElementById("output2").innerHTML = "Количесвто камней "
+        document.getElementById("output2").innerHTML = "Количество камней "
         document.getElementById("output").innerHTML = gems
     } else {
         gems = input.value
         tray = needTray(tray, gems)
-        document.getElementById("output2").innerHTML = "Количесвто молитв ";
+        document.getElementById("output2").innerHTML = "Количество молитв ";
         document.getElementById("output").innerHTML = tray.toFixed(1);
     }
 }
