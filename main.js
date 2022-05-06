@@ -8,8 +8,23 @@ let tray = null
 
 wrapper.style.backgroundImage = "url(./media/pai.png)"
 
+
+function testInput(input) {
+    if (input.value > 0 && input.value < 1000000000) {
+        input = input.value
+        return input
+
+    } else {
+        input.value = input.value.substring(0, input.value.length - 1);
+        console.log("Спасибо за проверку прочности кункулятора UwU")
+        return input
+    }
+}
+
 checkbox.onclick = function() {
     input.value = ""
+    document.getElementById("output").innerHTML = ""
+
     if (checkbox.checked) {
         wrapper.style.backgroundImage = "url(./media/gem.png)"
     } else {
@@ -18,7 +33,6 @@ checkbox.onclick = function() {
 }
 
 function needGems(gems, tray) {
-
     gems = tray * 160
     return gems
 }
@@ -30,6 +44,7 @@ function needTray(tray, gems) {
 }
 
 input.oninput = function() {
+    testInput(input)
     if (checkbox.checked) {
         tray = input.value
         gems = needGems(gems, tray)
