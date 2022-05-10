@@ -10,7 +10,7 @@ wrapper.style.backgroundImage = "url(./media/pai.png)"
 
 
 function testInput(input) {
-    if (input.value > 0 && input.value < 1000000000) {
+    if (input.value > -1 && input.value.length < 10) {
         input = input.value
         return input
 
