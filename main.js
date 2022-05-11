@@ -4,7 +4,7 @@ let output2 = document.getElementById("output2")
 let checkbox = document.getElementById("checkbox")
 let wrapper = document.getElementById("wrapper")
 let gems = null
-let tray = null
+let pray = null
 
 wrapper.style.backgroundImage = "url(./media/pai.png)"
 
@@ -27,28 +27,28 @@ checkbox.onclick = function() {
     }
 }
 
-function needGems(gems, tray) {
-    gems = tray * 160
+function needGems(pray) {
+    gems = pray * 160
     return gems
 }
 
-function needTray(tray, gems) {
-    wrapper.style.backgroundImage = "url(./media/crut.png)"
-    tray = gems / 160
-    return tray
+function needPray(gems) {
+    pray = gems / 160
+    return pray
 }
 
 input.oninput = function() {
     testInput(input)
     if (checkbox.checked) {
-        tray = input.value
-        gems = needGems(gems, tray)
+        pray = input.value
+        gems = needGems(pray)
         document.getElementById("output2").innerHTML = "Количество камней "
         document.getElementById("output").innerHTML = gems
     } else {
         gems = input.value
-        tray = needTray(tray, gems)
+        wrapper.style.backgroundImage = "url(./media/crut.png)"
+        pray = needPray(gems)
         document.getElementById("output2").innerHTML = "Количество молитв ";
-        document.getElementById("output").innerHTML = tray.toFixed(1);
+        document.getElementById("output").innerHTML = pray.toFixed(1);
     }
 }
