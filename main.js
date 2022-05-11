@@ -10,14 +10,9 @@ wrapper.style.backgroundImage = "url(./media/pai.png)"
 
 
 function testInput(input) {
-    if (input.value > -1 && input.value.length < 10) {
-        input = input.value
-        return input
-
-    } else {
+    if (input.value <= -1 || input.value.length >= 10) {
         input.value = input.value.substring(0, input.value.length - 1);
         console.log("Спасибо за проверку прочности кункулятора UwU")
-        return input
     }
 }
 
